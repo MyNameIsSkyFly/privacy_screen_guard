@@ -1,20 +1,20 @@
-import 'privacy_screen_guard_platform_interface.dart';
+import 'privacy_capture_guard_platform_interface.dart';
 
 /// Prevents Android screenshots and obscures iOS screen recordings.
-class PrivacyScreenGuard {
-  PrivacyScreenGuard._();
+class PrivacyCaptureGuard {
+  PrivacyCaptureGuard._();
 
-  static final PrivacyScreenGuard instance = PrivacyScreenGuard._();
+  static final PrivacyCaptureGuard instance = PrivacyCaptureGuard._();
 
-  Future<void> enable() => PrivacyScreenGuardPlatform.instance.enable();
-  Future<void> disable() => PrivacyScreenGuardPlatform.instance.disable();
-  Future<bool> get isEnabled => PrivacyScreenGuardPlatform.instance.isEnabled();
+  Future<void> enable() => PrivacyCaptureGuardPlatform.instance.enable();
+  Future<void> disable() => PrivacyCaptureGuardPlatform.instance.disable();
+  Future<bool> get isEnabled => PrivacyCaptureGuardPlatform.instance.isEnabled();
 
   /// Begins a manually managed temporary bypass. Calls may be nested.
-  Future<void> pause() => PrivacyScreenGuardPlatform.instance.pause();
+  Future<void> pause() => PrivacyCaptureGuardPlatform.instance.pause();
 
   /// Ends one [pause] scope and restores protection when the last scope ends.
-  Future<void> resume() => PrivacyScreenGuardPlatform.instance.resume();
+  Future<void> resume() => PrivacyCaptureGuardPlatform.instance.resume();
 
   /// Temporarily allows capture while an external system UI is presented.
   ///
@@ -24,7 +24,7 @@ class PrivacyScreenGuard {
     Future<T> Function() action, {
     Duration restoreDelay = const Duration(milliseconds: 350),
   }) async {
-    await PrivacyScreenGuardPlatform.instance.pause();
+    await PrivacyCaptureGuardPlatform.instance.pause();
     await Future<void>.delayed(Duration.zero);
     try {
       return await action();
@@ -32,7 +32,7 @@ class PrivacyScreenGuard {
       if (restoreDelay > Duration.zero) {
         await Future<void>.delayed(restoreDelay);
       }
-      await PrivacyScreenGuardPlatform.instance.resume();
+      await PrivacyCaptureGuardPlatform.instance.resume();
     }
   }
 }

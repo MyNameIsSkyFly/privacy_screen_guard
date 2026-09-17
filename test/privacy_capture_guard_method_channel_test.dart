@@ -1,16 +1,16 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:privacy_screen_guard/privacy_screen_guard_method_channel.dart';
+import 'package:privacy_capture_guard/privacy_capture_guard_method_channel.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  late MethodChannelPrivacyScreenGuard platform;
-  const MethodChannel channel = MethodChannel('privacy_screen_guard');
+  late MethodChannelPrivacyCaptureGuard platform;
+  const MethodChannel channel = MethodChannel('privacy_capture_guard');
   final calls = <String>[];
 
   setUp(() {
-    platform = MethodChannelPrivacyScreenGuard();
+    platform = MethodChannelPrivacyCaptureGuard();
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMethodCallHandler(channel, (MethodCall methodCall) async {
           calls.add(methodCall.method);

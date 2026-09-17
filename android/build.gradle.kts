@@ -1,4 +1,4 @@
-group = "com.mynameisskyfly.privacy_screen_guard"
+group = "com.mynameisskyfly.privacy_capture_guard"
 version = "1.0-SNAPSHOT"
 
 buildscript {
@@ -27,7 +27,7 @@ plugins {
 }
 
 android {
-    namespace = "com.mynameisskyfly.privacy_screen_guard"
+    namespace = "com.mynameisskyfly.privacy_capture_guard"
 
     compileSdk = 36
 

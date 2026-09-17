@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:privacy_screen_guard/privacy_screen_guard.dart';
+import 'package:privacy_capture_guard/privacy_capture_guard.dart';
 
 void main() => runApp(const GuardExample());
 
@@ -11,7 +11,7 @@ class GuardExample extends StatefulWidget {
 }
 
 class _GuardExampleState extends State<GuardExample> {
-  final guard = PrivacyScreenGuard.instance;
+  final guard = PrivacyCaptureGuard.instance;
   bool enabled = false;
 
   Future<void> toggle() async {

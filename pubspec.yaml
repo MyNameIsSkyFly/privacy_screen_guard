@@ -1,4 +1,4 @@
-name: privacy_screen_guard
+name: privacy_capture_guard
 description: Screenshot and screen-recording privacy guard with safe temporary bypasses for URL and purchase flows.
 version: 0.1.0
 homepage: https://github.com/MyNameIsSkyFly/privacy_screen_guard
@@ -37,10 +37,10 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.mynameisskyfly.privacy_screen_guard
-        pluginClass: PrivacyScreenGuardPlugin
+        package: com.mynameisskyfly.privacy_capture_guard
+        pluginClass: PrivacyCaptureGuardPlugin
       ios:
-        pluginClass: PrivacyScreenGuardPlugin
+        pluginClass: PrivacyCaptureGuardPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

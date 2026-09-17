@@ -1,12 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
-import 'privacy_screen_guard_platform_interface.dart';
+import 'privacy_capture_guard_platform_interface.dart';
 
 /// Method-channel bridge to this package's native implementations.
-class MethodChannelPrivacyScreenGuard extends PrivacyScreenGuardPlatform {
+class MethodChannelPrivacyCaptureGuard extends PrivacyCaptureGuardPlatform {
   @visibleForTesting
-  final methodChannel = const MethodChannel('privacy_screen_guard');
+  final methodChannel = const MethodChannel('privacy_capture_guard');
 
   @override
   Future<void> enable() => methodChannel.invokeMethod<void>('enable');

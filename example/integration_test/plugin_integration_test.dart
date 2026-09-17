@@ -9,13 +9,13 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
-import 'package:privacy_screen_guard/privacy_screen_guard.dart';
+import 'package:privacy_capture_guard/privacy_capture_guard.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   testWidgets('enable and disable protection', (WidgetTester tester) async {
-    final plugin = PrivacyScreenGuard.instance;
+    final plugin = PrivacyCaptureGuard.instance;
     await plugin.enable();
     expect(await plugin.isEnabled, true);
     await plugin.disable();

@@ -1,7 +1,7 @@
 import Flutter
 import UIKit
 
-public final class PrivacyScreenGuardPlugin: NSObject, FlutterPlugin {
+public final class PrivacyCaptureGuardPlugin: NSObject, FlutterPlugin {
   private var enabled = false
   private var pauseDepth = 0
   private weak var shieldView: UIView?
@@ -16,10 +16,10 @@ public final class PrivacyScreenGuardPlugin: NSObject, FlutterPlugin {
 
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(
-      name: "privacy_screen_guard",
+      name: "privacy_capture_guard",
       binaryMessenger: registrar.messenger()
     )
-    let instance = PrivacyScreenGuardPlugin()
+    let instance = PrivacyCaptureGuardPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
     instance.startObserving()
   }
@@ -121,7 +121,7 @@ public final class PrivacyScreenGuardPlugin: NSObject, FlutterPlugin {
     shield.backgroundColor = .black
     shield.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     shield.isUserInteractionEnabled = false
-    shield.accessibilityIdentifier = "PrivacyScreenGuardShield"
+    shield.accessibilityIdentifier = "PrivacyCaptureGuardShield"
     window.addSubview(shield)
     window.bringSubviewToFront(shield)
     shieldView = shield
@@ -154,7 +154,7 @@ public final class PrivacyScreenGuardPlugin: NSObject, FlutterPlugin {
     field.text = " "
     field.isSecureTextEntry = true
     field.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    field.accessibilityIdentifier = "PrivacyScreenGuardSecureField"
+    field.accessibilityIdentifier = "PrivacyCaptureGuardSecureField"
     let originalIndex = rootSuperview.subviews.firstIndex(of: rootView) ?? 0
     rootSuperview.insertSubview(field, at: originalIndex)
     pendingSecureField = field

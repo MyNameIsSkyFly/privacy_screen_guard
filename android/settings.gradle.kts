@@ -1,1 +1,1 @@
-rootProject.name = 'privacy_screen_guard'
+rootProject.name = 'privacy_capture_guard'

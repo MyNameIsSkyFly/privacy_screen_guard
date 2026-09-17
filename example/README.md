@@ -1,6 +1,6 @@
-# privacy_screen_guard_example
+# privacy_capture_guard_example
 
-Demonstrates how to use the privacy_screen_guard plugin.
+Demonstrates how to use the privacy_capture_guard plugin.
 
 ## Getting Started
 

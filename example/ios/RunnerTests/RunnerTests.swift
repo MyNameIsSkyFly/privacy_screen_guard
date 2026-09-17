@@ -3,7 +3,7 @@ import UIKit
 import XCTest
 
 
-@testable import privacy_screen_guard
+@testable import privacy_capture_guard
 
 // This demonstrates a simple unit test of the Swift portion of this plugin's implementation.
 //
@@ -12,7 +12,7 @@ import XCTest
 class RunnerTests: XCTestCase {
 
   func testIsEnabledDefaultsToFalse() {
-    let plugin = PrivacyScreenGuardPlugin()
+    let plugin = PrivacyCaptureGuardPlugin()
 
     let call = FlutterMethodCall(methodName: "isEnabled", arguments: [])
 

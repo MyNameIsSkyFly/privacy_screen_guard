@@ -7,7 +7,7 @@
 
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:privacy_screen_guard_example/main.dart';
+import 'package:privacy_capture_guard_example/main.dart';
 
 void main() {
   testWidgets('shows privacy controls', (WidgetTester tester) async {

@@ -1,4 +1,4 @@
-package com.mynameisskyfly.privacy_screen_guard
+package com.mynameisskyfly.privacy_capture_guard
 
 import android.app.Activity
 import android.view.WindowManager
@@ -8,14 +8,14 @@ import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 
-class PrivacyScreenGuardPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAware {
+class PrivacyCaptureGuardPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAware {
     private lateinit var channel: MethodChannel
     private var activity: Activity? = null
     private var enabled = false
     private var pauseDepth = 0
 
     override fun onAttachedToEngine(binding: FlutterPlugin.FlutterPluginBinding) {
-        channel = MethodChannel(binding.binaryMessenger, "privacy_screen_guard")
+        channel = MethodChannel(binding.binaryMessenger, "privacy_capture_guard")
         channel.setMethodCallHandler(this)
     }
 
@@ -46,7 +46,7 @@ class PrivacyScreenGuardPlugin : FlutterPlugin, MethodChannel.MethodCallHandler,
     private fun applyState(result: MethodChannel.Result? = null) {
         val currentActivity = activity
         if (currentActivity == null) {
-            result?.error("NO_ACTIVITY", "PrivacyScreenGuard requires a foreground Activity", null)
+            result?.error("NO_ACTIVITY", "PrivacyCaptureGuard requires a foreground Activity", null)
             return
         }
         currentActivity.runOnUiThread {

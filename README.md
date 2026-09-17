@@ -1,4 +1,4 @@
-# privacy_screen_guard
+# privacy_capture_guard
 
 Flutter 截屏/录屏隐私保护插件，支持 Android 和 iOS，并可在 URL 跳转、应用内购买等系统界面出现期间临时放行，避免转场黑屏。
 
@@ -20,7 +20,7 @@ Flutter 截屏/录屏隐私保护插件，支持 Android 和 iOS，并可在 URL
 ## 使用
 
 ```dart
-final guard = PrivacyScreenGuard.instance;
+final guard = PrivacyCaptureGuard.instance;
 
 // 建议在第一个敏感页面显示后开启。
 await guard.enable();

@@ -1,12 +1,12 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:privacy_screen_guard/privacy_screen_guard.dart';
-import 'package:privacy_screen_guard/privacy_screen_guard_platform_interface.dart';
-import 'package:privacy_screen_guard/privacy_screen_guard_method_channel.dart';
+import 'package:privacy_capture_guard/privacy_capture_guard.dart';
+import 'package:privacy_capture_guard/privacy_capture_guard_platform_interface.dart';
+import 'package:privacy_capture_guard/privacy_capture_guard_method_channel.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-class MockPrivacyScreenGuardPlatform
+class MockPrivacyCaptureGuardPlatform
     with MockPlatformInterfaceMixin
-    implements PrivacyScreenGuardPlatform {
+    implements PrivacyCaptureGuardPlatform {
   bool enabled = false;
   int pauseDepth = 0;
   @override
@@ -22,18 +22,18 @@ class MockPrivacyScreenGuardPlatform
 }
 
 void main() {
-  final PrivacyScreenGuardPlatform initialPlatform =
-      PrivacyScreenGuardPlatform.instance;
+  final PrivacyCaptureGuardPlatform initialPlatform =
+      PrivacyCaptureGuardPlatform.instance;
 
-  test('$MethodChannelPrivacyScreenGuard is the default instance', () {
-    expect(initialPlatform, isInstanceOf<MethodChannelPrivacyScreenGuard>());
+  test('$MethodChannelPrivacyCaptureGuard is the default instance', () {
+    expect(initialPlatform, isInstanceOf<MethodChannelPrivacyCaptureGuard>());
   });
 
   test('runUnprotected restores after an error', () async {
-    final fakePlatform = MockPrivacyScreenGuardPlatform()..enabled = true;
-    PrivacyScreenGuardPlatform.instance = fakePlatform;
+    final fakePlatform = MockPrivacyCaptureGuardPlatform()..enabled = true;
+    PrivacyCaptureGuardPlatform.instance = fakePlatform;
     await expectLater(
-      PrivacyScreenGuard.instance.runUnprotected<void>(
+      PrivacyCaptureGuard.instance.runUnprotected<void>(
         () async => throw StateError('failed'),
         restoreDelay: Duration.zero,
       ),
