@@ -1,12 +1,12 @@
 name: privacy_capture_guard
 description: Screenshot and screen-recording privacy guard with safe temporary bypasses for URL and purchase flows.
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/MyNameIsSkyFly/privacy_screen_guard
 repository: https://github.com/MyNameIsSkyFly/privacy_screen_guard
 issue_tracker: https://github.com/MyNameIsSkyFly/privacy_screen_guard/issues
 
 environment:
-  sdk: '>=3.11.1 <4.0.0'
+  sdk: ^3.10.0
   flutter: '>=3.3.0'
 
 dependencies:

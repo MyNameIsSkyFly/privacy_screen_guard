@@ -1,3 +1,8 @@
+## 0.1.1
+
+- Support Dart SDK 3.10 and later.
+- Prevent the hidden iOS secure-canvas field from reopening the keyboard.
+
 ## 0.1.0
 
 - Add Android screenshot and screen-recording protection with `FLAG_SECURE`.

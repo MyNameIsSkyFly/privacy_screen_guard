@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'privacy_capture_guard'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Screenshot and screen-recording privacy guard.'
   s.description      = <<-DESC
 Protects Flutter content and supports temporary bypasses for external UI.

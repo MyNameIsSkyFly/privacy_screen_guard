@@ -1,6 +1,17 @@
 import Flutter
 import UIKit
 
+private final class SecureCanvasTextField: UITextField {
+  override var canBecomeFirstResponder: Bool { false }
+
+  override func becomeFirstResponder() -> Bool { false }
+
+  override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+    let target = super.hitTest(point, with: event)
+    return target === self ? nil : target
+  }
+}
+
 public final class PrivacyCaptureGuardPlugin: NSObject, FlutterPlugin {
   private var enabled = false
   private var pauseDepth = 0
@@ -146,7 +157,7 @@ public final class PrivacyCaptureGuardPlugin: NSObject, FlutterPlugin {
       return
     }
 
-    let field = UITextField(frame: rootView.frame)
+    let field = SecureCanvasTextField(frame: rootView.frame)
     field.backgroundColor = .black
     field.borderStyle = .none
     field.textColor = .clear
