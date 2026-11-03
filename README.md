@@ -27,9 +27,7 @@ iOS 支持 Swift Package Manager 和 CocoaPods，两者使用同一份 Swift 源
 
 ```yaml
 dependencies:
-  privacy_capture_guard:
-    git:
-      url: https://github.com/MyNameIsSkyFly/privacy_screen_guard.git
+  privacy_capture_guard: ^0.1.2
 ```
 
 然后在应用目录运行：
