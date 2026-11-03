@@ -1,3 +1,10 @@
+## 0.1.2
+
+- Remove the explicit Flutter SDK version constraint; retain Dart SDK ^3.10.0.
+- Add iOS Swift Package Manager support, verified with Flutter 3.41.9 and 3.44.9.
+- Share iOS sources between Swift Package Manager and CocoaPods.
+- Bundle the existing privacy manifest with both dependency managers.
+
 ## 0.1.1
 
 - Support Dart SDK 3.10 and later.

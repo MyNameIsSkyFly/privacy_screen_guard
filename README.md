@@ -17,6 +17,47 @@ Flutter 截屏/录屏隐私保护插件，支持 Android 和 iOS，并可在 URL
 > 这不是苹果正式提供的截屏拦截 API，可能随 iOS 版本变化，也存在 App Store 审核风险。
 > URL 和购买流程必须使用 `runUnprotected`，它会在系统界面出现前拆除安全画布。
 
+## iOS 依赖管理
+
+iOS 支持 Swift Package Manager 和 CocoaPods，两者使用同一份 Swift 源码。最低 iOS 版本为 13.0。
+
+### Swift Package Manager
+
+插件未显式限制 Flutter 最低版本，保留 Dart SDK `^3.10.0` 要求。Swift Package Manager 构建已在 Flutter 3.41.9 和 3.44.9 上验证；其他版本需使用满足 Dart SDK 要求且支持相应依赖管理方式的 Flutter SDK。在 Flutter 应用的 `pubspec.yaml` 中添加插件依赖：
+
+```yaml
+dependencies:
+  privacy_capture_guard:
+    git:
+      url: https://github.com/MyNameIsSkyFly/privacy_screen_guard.git
+```
+
+然后在应用目录运行：
+
+```sh
+flutter config --enable-swift-package-manager
+flutter pub get
+flutter build ios --simulator
+```
+
+Flutter 3.41.x 请显式启用 Swift Package Manager。Flutter 会自动识别 `ios/privacy_capture_guard/Package.swift`，并提供 `FlutterFramework` 依赖，无需在 Xcode 中手动添加仓库 URL。
+
+这是 Flutter 插件的 Swift Package，不是独立的原生 Swift SDK。Dart API 和插件注册方式保持不变。
+
+本地开发示例时，请使用与包名一致的克隆目录名，避免 SwiftPM 本地包标识冲突：
+
+```sh
+git clone git@github.com:MyNameIsSkyFly/privacy_screen_guard.git privacy_capture_guard
+cd privacy_capture_guard/example
+flutter config --enable-swift-package-manager
+flutter pub get
+flutter build ios --simulator
+```
+
+### CocoaPods
+
+现有 CocoaPods 项目可继续使用 `ios/privacy_capture_guard.podspec`，无需更改 Dart 调用。Swift Package Manager 和 CocoaPods 均会打包 `PrivacyInfo.xcprivacy`。
+
 ## 使用
 
 ```dart

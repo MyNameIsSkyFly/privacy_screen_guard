@@ -2,7 +2,7 @@ PODS:
   - Flutter (1.0.0)
   - integration_test (0.0.1):
     - Flutter
-  - privacy_capture_guard (0.1.0):
+  - privacy_capture_guard (0.1.2):
     - Flutter
 
 DEPENDENCIES:
@@ -21,7 +21,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
   integration_test: 4a889634ef21a45d28d50d622cf412dc6d9f586e
-  privacy_capture_guard: d82f8d6d1f33f7dab55e99df608837578d1ba38f
+  privacy_capture_guard: cace75c476db02573e7dee26ce713f40f3bb85d5
 
 PODFILE CHECKSUM: 3c63482e143d1b91d2d2560aee9fb04ecc74ac7e
 
